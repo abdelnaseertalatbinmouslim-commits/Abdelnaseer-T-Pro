@@ -3,102 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdelnaseer T pro | Global Developer</title>
+    <title>Sports Science | Assiut University</title>
     <style>
+        :root {
+            --primary-bg: #0a192f;
+            --accent-blue: #00d2ff;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
         body {
-            background: #0f0c29;
+            background-color: var(--primary-bg);
             color: white;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            overflow-x: hidden;
         }
-        .header {
+
+        /* غلاف الموقع (Abdo) */
+        .hero-banner {
             width: 100%;
-            padding: 20px;
-            text-align: center;
-            font-weight: 900;
-            color: #00d2ff;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            height: 350px;
+            background: url('Abdo.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            border-bottom: 5px solid var(--accent-blue);
         }
-        .profile-img {
-            width: 180px;
-            height: 180px;
+
+        /* لوجو الكلية (Habiba) */
+        .logo-container {
+            position: absolute;
+            bottom: -60px;
+            right: 50px;
+            z-index: 10;
+        }
+
+        .logo-img {
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 4px solid #00d2ff;
-            margin-top: 30px;
+            border: 6px solid var(--primary-bg);
+            background: white;
             object-fit: cover;
-            box-shadow: 0 0 20px #00d2ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-        h1 {
-            font-size: 2.5rem;
-            margin: 20px 0;
-            background: linear-gradient(to right, #00d2ff, #91ffaf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-        .section {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 25px;
-            width: 90%;
-            max-width: 600px;
-            margin: 20px 0;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .file-item {
-            background: #16213e;
+
+        /* الهيدر العلوي بالاسم الجديد */
+        .header-content {
+            padding: 80px 50px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            border-right: 4px solid #ff0055;
         }
-        .btn-download {
+
+        .uni-name { 
+            font-size: 2.2rem; 
+            font-weight: 900; 
+            color: var(--accent-blue);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: Arial, sans-serif;
+        }
+
+        .college-name { 
+            font-size: 2rem; 
+            font-weight: 800; 
+            color: #ffffff;
+            flex-grow: 1; 
+            text-align: center; 
+            font-family: Arial, sans-serif;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        .term-box {
+            background: linear-gradient(90deg, #ff0055, #3a7bd5);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 40px 0;
+            display: inline-block;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .subject-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 25px;
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .subject-card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--accent-blue);
+        }
+
+        .download-btn {
+            display: inline-block;
             background: #ff0055;
             color: white;
-            padding: 8px 15px;
+            padding: 12px 25px;
+            border-radius: 10px;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: bold;
+        }
+
+        .footer { 
+            padding: 50px; 
+            text-align: center; 
+            background: rgba(0,0,0,0.4); 
+            margin-top: 80px;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; padding: 70px 20px 20px; }
+            .logo-container { right: 50%; transform: translateX(50%); bottom: -80px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">Abdelnaseer T pro</div>
-
-    <img src="IMG-20251206-WA0009.jpg" alt="Abdelnaseer" class="profile-img">
-
-    <h1>المبرمج العالمي</h1>
-
-    <div class="section">
-        <h2 style="color: #00d2ff;">📂 ملفاتي وأعمالي العالمية</h2>
-        
-        <div class="file-item">
-            <span>سجل المشاريع والخبرات</span>
-            <a href="#" class="btn-download">تحميل</a>
-        </div>
-        
-        <div class="file-item">
-            <span>السيرة الذاتية الاحترافية</span>
-            <a href="#" class="btn-download">تحميل</a>
+    <div class="hero-banner">
+        <div class="logo-container">
+            <img src="Habiba.jpg" alt="Logo" class="logo-img">
         </div>
     </div>
 
-    <div style="margin: 30px; text-align: center;">
-        <p style="font-size: 1.2rem; color: #ccc;">للتواصل مع المبرمج العالمي:</p>
-        <a href="https://wa.me/201098227150" style="color: #00d2ff; font-size: 1.5rem; text-decoration: none; font-weight: bold;">
-            📞 01098227150
-        </a>
+    <header class="header-content">
+        <div class="uni-name">Assiut University</div>
+        <div class="college-name">Sports Science</div>
+    </header>
+
+    <div class="container">
+        <div class="term-box">الفرقة الأولى - الفصل الدراسي الأول</div>
+
+        <div class="subject-grid">
+            <div class="subject-card">
+                <h3>فلسفة وتاريخ التربية الرياضية</h3>
+                <a href="falsafa.pdf" class="download-btn">📥 Download</a>
+            </div>
+            <div class="subject-card">
+                <h3>مقدمة في الإدارة</h3>
+                <a href="edara.pdf" class="download-btn">📥 Download</a>
+            </div>
+            <div class="subject-card">
+                <h3>أساسيات كرة القدم</h3>
+                <a href="football.pdf" class="download-btn">📥 Download</a>
+            </div>
+            <div class="subject-card">
+                <h3>أساسيات التمرينات</h3>
+                <a href="tamrenat.pdf" class="download-btn">📥 Download</a>
+            </div>
+            <div class="subject-card">
+                <h3>اللغة الإنجليزية</h3>
+                <a href="english.pdf" class="download-btn">📥 Download</a>
+            </div>
+            <div class="subject-card">
+                <h3>أساسيات المبارزة</h3>
+                <a href="mobaraza.pdf" class="download-btn">📥 Download</a>
+            </div>
+            <div class="subject-card">
+                <h3>أساسيات سباقات المضمار</h3>
+                <a href="madmar.pdf" class="download-btn">📥 Download</a>
+            </div>
+        </div>
     </div>
+
+    <footer class="footer">
+        Created by: <b>Abdelnaseer T pro</b> &copy; 2025
+    </footer>
 
 </body>
 </html>
