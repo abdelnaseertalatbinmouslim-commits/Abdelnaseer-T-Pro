@@ -5,134 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdelnaseer T pro | Global Developer</title>
     <style>
-        :root {
-            --primary-color: #00d2ff;
-            --secondary-color: #3a7bd5;
-            --accent-color: #ff0055;
-            --bg-dark: #0f0c29;
-        }
-
         body {
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: #0f0c29;
             color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
         }
-
-        /* الاسم اللي فوق خالص */
-        .top-brand {
+        .header {
             width: 100%;
+            padding: 20px;
             text-align: center;
-            padding: 20px 0;
-            font-size: 1.5rem;
             font-weight: 900;
-            letter-spacing: 2px;
-            color: var(--primary-color);
+            color: #00d2ff;
             text-transform: uppercase;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
-        .container {
-            max-width: 900px;
-            padding: 50px 20px;
-            text-align: center;
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #00d2ff;
+            margin-top: 30px;
+            object-fit: cover;
+            box-shadow: 0 0 20px #00d2ff;
         }
-
         h1 {
-            font-size: 4rem;
-            margin: 10px 0;
+            font-size: 2.5rem;
+            margin: 20px 0;
             background: linear-gradient(to right, #00d2ff, #91ffaf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            line-height: 1.2;
         }
-
-        .subtitle {
-            font-size: 1.8rem;
-            color: #ccc;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .portfolio-card {
+        .section {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 40px;
-            margin-top: 40px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            padding: 25px;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px 0;
         }
-
-        .description {
-            font-size: 1.4rem;
-            line-height: 1.8;
-            color: #e0e0e0;
+        .file-item {
+            background: #16213e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-right: 4px solid #ff0055;
         }
-
-        .highlight {
-            color: var(--primary-color);
-            font-weight: bold;
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        .contact-box {
-            margin-top: 40px;
-            padding: 20px;
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            border-radius: 50px;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .contact-box:hover {
-            transform: scale(1.1);
-        }
-
-        a {
+        .btn-download {
+            background: #ff0055;
             color: white;
+            padding: 8px 15px;
             text-decoration: none;
-            font-size: 1.5rem;
+            border-radius: 5px;
             font-weight: bold;
-        }
-
-        .footer {
-            margin-top: auto;
-            padding: 40px;
-            font-size: 0.9rem;
-            opacity: 0.6;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-brand">Abdelnaseer T pro</div>
+    <div class="header">Abdelnaseer T pro</div>
 
-    <div class="container">
-        <h1>مبرمج عالمي <br> بخبرات استثنائية</h1>
-        <p class="subtitle">صناعة المستقبل بكود واحد في كل مرة</p>
+    <img src="IMG-20251206-WA0009.jpg" alt="Abdelnaseer" class="profile-img">
 
-        <div class="portfolio-card">
-            <p class="description">
-                أنا <span class="highlight">عبدالناصر</span>، مبرمج عالمي متخصص في بناء الأنظمة المعقدة والحلول الرقمية المبتكرة. 
-                لي تاريخ طويل من <span class="highlight">الأعمال الضخمة</span> والمشاريع التي تخدم آلاف المستخدمين حول العالم.
-                دائماً ما أضع لمستي الخاصة التي تجمع بين القوة التقنية وجمال التصميم.
-            </p>
+    <h1>المبرمج العالمي</h1>
+
+    <div class="section">
+        <h2 style="color: #00d2ff;">📂 ملفاتي وأعمالي</h2>
+        
+        <div class="file-item">
+            <span>معرض أعمال المبرمج</span>
+            <a href="#" class="btn-download">تحميل</a>
         </div>
-
-        <div class="contact-box">
-            <a href="https://wa.me/201098227150">تواصل معي الآن: 01098227150</a>
+        
+        <div class="file-item">
+            <span>السيرة الذاتية الاحترافية</span>
+            <a href="#" class="btn-download">تحميل</a>
         </div>
     </div>
 
-    <div class="footer">
-        © 2025 Abdelnaseer T pro. All Rights Reserved.
+    <div style="margin: 30px;">
+        <a href="https://wa.me/201098227150" style="color: #00d2ff; font-size: 1.2rem; text-decoration: none;">
+            📞 تواصل مباشر: 01098227150
+        </a>
     </div>
 
 </body>
