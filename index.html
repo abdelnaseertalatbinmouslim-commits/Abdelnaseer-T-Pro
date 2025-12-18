@@ -3,129 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports Science | Assiut University</title>
+    <title>Faculty of Sport Science | Assiut University</title>
     <style>
         :root {
-            --primary-bg: #0a192f;
             --accent-blue: #00d2ff;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent-pink: #ff0055;
+            --text-white: #ffffff;
         }
 
+        /* خلفية متحركة احترافية */
         body {
-            background-color: var(--primary-bg);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-white);
+            background: linear-gradient(-45deg, #0a192f, #112240, #0a192f, #1a365d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             overflow-x: hidden;
         }
 
-        /* غلاف الموقع (Abdo) */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* الغلاف */
         .hero-banner {
             width: 100%;
-            height: 350px;
+            height: 380px;
             background: url('Abdo.jpg') no-repeat center center;
             background-size: cover;
             position: relative;
-            border-bottom: 5px solid var(--accent-blue);
+            border-bottom: 4px solid var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* لوجو الكلية (Habiba) */
+        /* اللوجو */
         .logo-container {
             position: absolute;
-            bottom: -60px;
-            right: 50px;
+            bottom: -70px;
+            right: 60px;
             z-index: 10;
         }
 
         .logo-img {
-            width: 160px;
-            height: 160px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
-            border: 6px solid var(--primary-bg);
+            border: 6px solid #0a192f;
             background: white;
             object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }
 
-        /* الهيدر العلوي بالاسم الجديد */
+        /* الهيدر المعدل */
         .header-content {
-            padding: 80px 50px 20px;
+            padding: 100px 60px 30px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
         }
 
-        .uni-name { 
-            font-size: 2.2rem; 
+        .uni-section {
+            text-align: right;
+        }
+
+        .uni-name-ar { 
+            font-size: 2.8rem; 
             font-weight: 900; 
             color: var(--accent-blue);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.2;
         }
 
-        .college-name { 
-            font-size: 2rem; 
-            font-weight: 800; 
-            color: #ffffff;
-            flex-grow: 1; 
-            text-align: center; 
-            font-family: Arial, sans-serif;
-        }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        
-        .term-box {
-            background: linear-gradient(90deg, #ff0055, #3a7bd5);
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.6rem;
+        .uni-name-en {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            margin: 0;
             font-weight: bold;
-            margin: 40px 0;
-            display: inline-block;
         }
 
+        .college-section {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .college-name-ar {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: white;
+            margin: 0;
+        }
+
+        .college-name-en {
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .container { max-width: 1150px; margin: 0 auto; padding: 20px; }
+        
+        .term-badge {
+            background: linear-gradient(90deg, var(--accent-pink), #3a7bd5);
+            padding: 15px 45px;
+            border-radius: 50px;
+            font-size: 1.7rem;
+            font-weight: bold;
+            margin: 50px 0 30px;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(255, 0, 85, 0.4);
+        }
+
+        /* كروت المواد */
         .subject-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .subject-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 25px;
-            transition: 0.4s;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 35px 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
         }
 
         .subject-card:hover { 
-            transform: translateY(-10px); 
+            transform: translateY(-15px); 
             border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 210, 255, 0.2);
         }
+
+        .subject-card h3 { font-size: 1.4rem; margin-bottom: 25px; min-height: 60px; line-height: 1.4; }
 
         .download-btn {
             display: inline-block;
-            background: #ff0055;
+            background: var(--accent-pink);
             color: white;
-            padding: 12px 25px;
-            border-radius: 10px;
+            padding: 14px 30px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.3);
+        }
+
+        .download-btn:hover {
+            background: #00d2ff;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #00d2ff;
         }
 
         .footer { 
-            padding: 50px; 
+            padding: 60px; 
             text-align: center; 
-            background: rgba(0,0,0,0.4); 
-            margin-top: 80px;
-            color: #888;
+            background: rgba(0,0,0,0.5); 
+            margin-top: 100px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         @media (max-width: 768px) {
-            .header-content { flex-direction: column; text-align: center; padding: 70px 20px 20px; }
-            .logo-container { right: 50%; transform: translateX(50%); bottom: -80px; }
+            .header-content { flex-direction: column; text-align: center; padding: 110px 20px 20px; }
+            .uni-section { text-align: center; width: 100%; margin-bottom: 20px; }
+            .logo-container { right: 50%; transform: translateX(50%); bottom: -85px; }
+            .uni-name-ar { font-size: 2rem; }
+            .college-name-ar { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -138,47 +188,53 @@
     </div>
 
     <header class="header-content">
-        <div class="uni-name">Assiut University</div>
-        <div class="college-name">Sports Science</div>
+        <div class="uni-section">
+            <h1 class="uni-name-ar">جامعة أسيوط</h1>
+            <p class="uni-name-en">Assiut University</p>
+        </div>
+        <div class="college-section">
+            <h2 class="college-name-ar">كلية علوم الرياضة</h2>
+            <p class="college-name-en">Faculty of Sport Science</p>
+        </div>
     </header>
 
     <div class="container">
-        <div class="term-box">الفرقة الأولى - الفصل الدراسي الأول</div>
+        <div class="term-badge">الفرقة الأولى - الفصل الدراسي الأول</div>
 
         <div class="subject-grid">
             <div class="subject-card">
                 <h3>فلسفة وتاريخ التربية الرياضية</h3>
-                <a href="falsafa.pdf" class="download-btn">📥 Download</a>
+                <a href="falsafa.pdf" class="download-btn">📥 تحميل الكتاب</a>
             </div>
             <div class="subject-card">
                 <h3>مقدمة في الإدارة</h3>
-                <a href="edara.pdf" class="download-btn">📥 Download</a>
+                <a href="edara.pdf" class="download-btn">📥 تحميل الكتاب</a>
             </div>
             <div class="subject-card">
                 <h3>أساسيات كرة القدم</h3>
-                <a href="football.pdf" class="download-btn">📥 Download</a>
+                <a href="football.pdf" class="download-btn">📥 تحميل الكتاب</a>
             </div>
             <div class="subject-card">
                 <h3>أساسيات التمرينات</h3>
-                <a href="tamrenat.pdf" class="download-btn">📥 Download</a>
+                <a href="tamrenat.pdf" class="download-btn">📥 تحميل الكتاب</a>
             </div>
             <div class="subject-card">
                 <h3>اللغة الإنجليزية</h3>
-                <a href="english.pdf" class="download-btn">📥 Download</a>
+                <a href="english.pdf" class="download-btn">📥 تحميل الكتاب</a>
             </div>
             <div class="subject-card">
                 <h3>أساسيات المبارزة</h3>
-                <a href="mobaraza.pdf" class="download-btn">📥 Download</a>
+                <a href="mobaraza.pdf" class="download-btn">📥 تحميل الكتاب</a>
             </div>
             <div class="subject-card">
                 <h3>أساسيات سباقات المضمار</h3>
-                <a href="madmar.pdf" class="download-btn">📥 Download</a>
+                <a href="madmar.pdf" class="download-btn">📥 تحميل الكتاب</a>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        Created by: <b>Abdelnaseer T pro</b> &copy; 2025
+        بواسطة المبرمج العالمي: <b style="color: var(--accent-blue);">Abdelnaseer T pro</b> &copy; 2025
     </footer>
 
 </body>
