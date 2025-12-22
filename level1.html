@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محتوى الفرقة الأولى | كلية علوم الرياضة</title>
+    <style>
+        :root {
+            --accent-blue: #00d2ff;
+            --accent-pink: #ff0055;
+            --dark-navy: #0a192f;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background: linear-gradient(135deg, #0a192f 0%, #020c1b 100%);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        .back-home {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid var(--accent-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .back-home:hover { background: var(--accent-blue); color: var(--dark-navy); }
+
+        h1.main-title {
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #fff, var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 30px rgba(0,210,255,0.3);
+        }
+
+        /* تنسيق عناوين الفصول المميزة */
+        .term-header {
+            font-size: 2.8rem;
+            font-weight: 900;
+            padding: 25px;
+            margin: 50px 0 35px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            display: block;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+        }
+
+        .term-header.first { 
+            color: var(--accent-blue); 
+            border-right: 12px solid var(--accent-blue);
+        }
+
+        .term-header.second { 
+            color: var(--accent-pink); 
+            border-left: 12px solid var(--accent-pink);
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+
+        .subject-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .subject-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* الأزرار */
+        .btn-group { display: flex; gap: 12px; justify-content: center; }
+
+        .btn {
+            flex: 1;
+            padding: 12px 10px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-book { background: var(--accent-pink); color: white; }
+        .btn-exam { background: #3a7bd5; color: white; }
+
+        .btn:hover {
+            filter: brightness(1.1);
+            transform: scale(1.03);
+        }
+
+        footer { padding: 50px; color: rgba(255,255,255,0.5); border-top: 1px solid var(--glass); margin-top: 40px; }
+
+        @media (max-width: 768px) {
+            h1.main-title { font-size: 2.2rem; }
+            .term-header { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-home">⬅ العودة للرئيسية</a>
+    <h1 class="main-title">محتوى الفرقة الأولى</h1>
+
+    <div class="term-header first">الفصل الدراسي الأول</div>
+    <div class="subject-grid">
+        <div class="subject-card"><h3>أساسيات التمرينات</h3><div class="btn-group"><a href="tamrenat.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>أساسيات المبارزة</h3><div class="btn-group"><a href="mobaraza.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>أساسيات المضمار</h3><div class="btn-group"><a href="madmar.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>أساسيات الإيقاع الحركي</h3><div class="btn-group"><a href="eqaa.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>مذكرة أساسيات كرة القدم</h3><div class="btn-group"><a href="football.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>فلسفة وتاريخ التربية الرياضية</h3><div class="btn-group"><a href="falsafa.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>مقدمة في الإدارة الرياضية</h3><div class="btn-group"><a href="edara.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>التشريح الوصفي</h3><div class="btn-group"><a href="tashreh.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>اللغة الإنجليزية</h3><div class="btn-group"><a href="english.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+    </div>
+
+    <div class="term-header second">الفصل الدراسي الثاني</div>
+    <div class="subject-grid">
+        <div class="subject-card"><h3>أساسيات ألعاب مضرب</h3><div class="btn-group"><a href="madreb.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>أساسيات الجمباز الإيقاعي</h3><div class="btn-group"><a href="gym.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>أساسيات السباحة</h3><div class="btn-group"><a href="swimming.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>أساسيات المصارعة</h3><div class="btn-group"><a href="wrestling.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>الإحصاء التطبيقي</h3><div class="btn-group"><a href="stats.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>مدخل في علم النفس الرياضي</h3><div class="btn-group"><a href="psychology.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>مقرر أساسيات الكرة الطائرة</h3><div class="btn-group"><a href="volleyball.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>مبادئ التدريس</h3><div class="btn-group"><a href="teaching.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>مبادئ علم الحركة</h3><div class="btn-group"><a href="kinesiology.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>فسيولوجيا الإنسان</h3><div class="btn-group"><a href="physiology.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+        <div class="subject-card"><h3>قضايا مجتمعية</h3><div class="btn-group"><a href="issues.pdf" class="btn btn-book">📥 الكتاب</a><a href="#" class="btn btn-exam">📝 شيتات</a></div></div>
+    </div>
+</div>
+
+<footer>
+    صمم بكل احترافية بواسطة المبرمج العالمي: <b style="color: var(--accent-blue);">Abdelnaseer T pro</b> &copy; 2025
+</footer>
+
+</body>
+</html>
