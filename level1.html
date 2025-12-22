@@ -8,7 +8,7 @@
         :root {
             --accent-blue: #00d2ff;
             --accent-pink: #ff0055;
-            --accent-green: #00ff88; /* لون زر الامتحانات الجديد */
+            --accent-green: #00ff88;
             --dark-navy: #0a192f;
         }
 
@@ -41,27 +41,39 @@
         .term-header.first { color: var(--accent-blue); border-right: 12px solid var(--accent-blue); }
         .term-header.second { color: var(--accent-pink); border-left: 12px solid var(--accent-pink); }
 
-        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
 
         .subject-card {
             background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 25px; transition: 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 25px; transition: 0.4s ease;
         }
         .subject-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.15); border-color: var(--accent-blue); }
 
-        .subject-card h3 { font-size: 1.3rem; margin-bottom: 20px; min-height: 40px; }
+        .subject-card h3 { font-size: 1.4rem; margin-bottom: 25px; min-height: 45px; color: #eee; }
 
-        /* الأزرار الثلاثة */
-        .btn-group { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-        .btn { flex: 1; min-width: 90px; padding: 10px 5px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s; color: white; }
+        /* الأزرار (شيت وامتحان فقط) */
+        .btn-group { display: flex; gap: 15px; justify-content: center; }
+        .btn { 
+            flex: 1; 
+            padding: 15px 10px; 
+            border-radius: 15px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1rem; 
+            transition: 0.3s; 
+            color: white; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
         
-        .btn-book { background: var(--accent-pink); }
-        .btn-sheet { background: #3a7bd5; }
-        .btn-exam { background: var(--accent-green); color: #000; }
+        .btn-sheet { background: #3a7bd5; } /* لون الشيتات */
+        .btn-exam { background: var(--accent-green); color: #000; } /* لون الامتحانات */
 
-        .btn:hover { filter: brightness(1.2); transform: scale(1.05); }
+        .btn:hover { filter: brightness(1.2); transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
-        footer { padding: 50px; background: rgba(0,0,0,0.8); color: rgba(255,255,255,0.6); margin-top: 50px; }
+        footer { padding: 50px; background: rgba(0,0,0,0.8); color: rgba(255,255,255,0.6); margin-top: 50px; border-top: 1px solid var(--accent-blue); }
     </style>
 </head>
 <body>
@@ -72,30 +84,30 @@
 
     <div class="term-header first">الفصل الدراسي الأول</div>
     <div class="subject-grid">
-        <div class="subject-card"><h3>أساسيات التمرينات</h3><div class="btn-group"><a href="tamrenat.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات المبارزة</h3><div class="btn-group"><a href="mobaraza.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات المضمار</h3><div class="btn-group"><a href="madmar.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات الإيقاع الحركي</h3><div class="btn-group"><a href="eqaa.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات كرة القدم</h3><div class="btn-group"><a href="football.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>فلسفة وتاريخ التربية الرياضية</h3><div class="btn-group"><a href="falsafa.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>مقدمة في الإدارة الرياضية</h3><div class="btn-group"><a href="edara.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>التشريح الوصفي</h3><div class="btn-group"><a href="tashreh.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>اللغة الإنجليزية</h3><div class="btn-group"><a href="english.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات التمرينات</h3><div class="btn-group"><a href="tamrenat-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="tamrenat-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات المبارزة</h3><div class="btn-group"><a href="mobaraza-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="mobaraza-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات المضمار</h3><div class="btn-group"><a href="madmar-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="madmar-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات الإيقاع الحركي</h3><div class="btn-group"><a href="eqaa-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="eqaa-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات كرة القدم</h3><div class="btn-group"><a href="football-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="football-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>فلسفة وتاريخ التربية الرياضية</h3><div class="btn-group"><a href="falsafa-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="falsafa-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>مقدمة في الإدارة الرياضية</h3><div class="btn-group"><a href="edara-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="edara-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>التشريح الوصفي</h3><div class="btn-group"><a href="tashreh-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="tashreh-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>اللغة الإنجليزية</h3><div class="btn-group"><a href="english-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="english-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
     </div>
 
     <div class="term-header second">الفصل الدراسي الثاني</div>
     <div class="subject-grid">
-        <div class="subject-card"><h3>أساسيات ألعاب مضرب</h3><div class="btn-group"><a href="madreb.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات الجمباز الإيقاعي</h3><div class="btn-group"><a href="gym.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات السباحة</h3><div class="btn-group"><a href="swimming.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات المصارعة</h3><div class="btn-group"><a href="wrestling.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>الإحصاء التطبيقي</h3><div class="btn-group"><a href="stats.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>علم النفس الرياضي</h3><div class="btn-group"><a href="psychology.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>أساسيات الكرة الطائرة</h3><div class="btn-group"><a href="volleyball.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>مبادئ التدريس</h3><div class="btn-group"><a href="teaching.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>مبادئ علم الحركة</h3><div class="btn-group"><a href="kinesiology.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>فسيولوجيا الإنسان</h3><div class="btn-group"><a href="physiology.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
-        <div class="subject-card"><h3>قضايا مجتمعية</h3><div class="btn-group"><a href="issues.pdf" class="btn btn-book">📖 كتاب</a><a href="#" class="btn btn-sheet">📝 شيت</a><a href="#" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات ألعاب مضرب</h3><div class="btn-group"><a href="madreb-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="madreb-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات الجمباز الإيقاعي</h3><div class="btn-group"><a href="gym-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="gym-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات السباحة</h3><div class="btn-group"><a href="swimming-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="swimming-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات المصارعة</h3><div class="btn-group"><a href="wrestling-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="wrestling-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>الإحصاء التطبيقي</h3><div class="btn-group"><a href="stats-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="stats-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>علم النفس الرياضي</h3><div class="btn-group"><a href="psychology-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="psychology-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات الكرة الطائرة</h3><div class="btn-group"><a href="volleyball-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="volleyball-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>مبادئ التدريس</h3><div class="btn-group"><a href="teaching-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="teaching-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>مبادئ علم الحركة</h3><div class="btn-group"><a href="kinesiology-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="kinesiology-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>فسيولوجيا الإنسان</h3><div class="btn-group"><a href="physiology-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="physiology-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
+        <div class="subject-card"><h3>قضايا مجتمعية</h3><div class="btn-group"><a href="issues-sheet.pdf" class="btn btn-sheet">📝 شيت</a><a href="issues-exam.pdf" class="btn btn-exam">🎯 امتحان</a></div></div>
     </div>
 </div>
 
