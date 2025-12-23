@@ -1,5 +1,5 @@
-/* MASTER STYLESHEET BY: CAP. ABDELNASEER TALAT 
-   PROJECT: PHYSICAL EDUCATION AUN PLATFORM
+/* PROJECT: PHYSICAL EDUCATION AUN - 4K ULTRA EDITION
+   DEVELOPER: CAP. ABDELNASEER TALAT
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
@@ -8,116 +8,101 @@
     --nasser-blue: #00d2ff;
     --nasser-pink: #ff0055;
     --nasser-gold: #ffcc00;
-    --glass: rgba(255, 255, 255, 0.08);
+    --bg-dark: #050a15;
 }
 
-* { box-sizing: border-box; transition: 0.3s ease; }
+* {
+    box-sizing: border-box;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
 body {
     margin: 0; padding: 0;
     font-family: 'Cairo', sans-serif;
     color: white;
-    background: #0a192f;
+    background-color: var(--bg-dark);
     overflow-x: hidden;
     text-align: center;
 }
 
-/* خلفية الصور المتنقلة السحرية */
-.bg-slideshow {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -2;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    animation: slideAnimation 25s infinite;
+/* تأثير الخلفية الـ 4K السائلة (بديل الصور الثقيلة) */
+.bg-4k-mesh {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+    background: radial-gradient(at 0% 0%, #0a192f 0%, transparent 50%),
+                radial-gradient(at 50% 0%, #112240 0%, transparent 50%),
+                radial-gradient(at 100% 0%, var(--nasser-blue) 0%, transparent 50%),
+                radial-gradient(at 0% 100%, var(--nasser-pink) 0%, transparent 50%),
+                radial-gradient(at 100% 100%, #0a192f 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: meshAnimation 15s linear infinite;
 }
 
-@keyframes slideAnimation {
-    0%, 100% { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('Abdo.jpg'); }
-    33% { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('sport1.jpg'); }
-    66% { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('sport2.jpg'); }
+@keyframes meshAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
 }
 
-/* تصميم اسم ناصر الزجاجي المضيء */
-.nasser-brand-container {
-    margin-top: 40px;
-    perspective: 1000px;
-}
-
-.nasser-glass-brand {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 20px 50px;
+/* تصميم اسم ناصر النيون المطور */
+.nasser-brand-capsule {
+    margin-top: 50px;
     display: inline-block;
-    border-radius: 60px;
-    font-size: clamp(1.5rem, 5vw, 2.8rem);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 25px 60px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 900;
+    letter-spacing: 4px;
     color: #fff;
     text-shadow: 0 0 20px var(--nasser-blue), 0 0 40px var(--nasser-blue);
-    box-shadow: 0 10px 40px rgba(0, 210, 255, 0.4), inset 0 0 20px rgba(255,255,255,0.2);
-    letter-spacing: 3px;
-    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 0 50px rgba(0, 210, 255, 0.3);
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* تأثير اللوحات الزجاجية للمحتوى */
-.glass-panel {
-    background: var(--glass);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 35px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+/* لوحات زجاجية فائقة الوضوح (4K Clarity) */
+.glass-panel-4k {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.5);
 }
 
 .nasser-glow-title {
     color: var(--nasser-gold);
-    font-size: 1.8rem;
     font-weight: 900;
-    margin: 40px 0 20px;
-    text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
     border-right: 6px solid var(--nasser-gold);
     padding-right: 20px;
-    text-align: right;
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
 }
 
-/* القوائم الأنيقة */
-.nasser-list {
-    list-style: none; padding: 0; text-align: right;
+/* كروت تفاعلية 3D */
+.nasser-card-3d {
+    text-decoration: none;
+    color: white;
+    perspective: 1000px; /* لزوم تأثير الـ 3D */
 }
 
-.nasser-list li {
-    font-size: 1.25rem; margin-bottom: 15px; padding: 15px;
-    background: rgba(255,255,255,0.05); border-radius: 15px;
-    border-left: 3px solid var(--nasser-blue);
+.nasser-card-inner {
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
 }
 
-/* كروت المواد والفرق */
-.nasser-card {
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-decoration: none; color: white;
-}
-
-.nasser-card:hover {
-    transform: translateY(-15px) scale(1.02);
+.nasser-card-3d:hover .nasser-card-inner {
+    border: 1px solid var(--nasser-blue);
     background: var(--nasser-pink);
-    box-shadow: 0 15px 40px rgba(255, 0, 85, 0.5);
+    box-shadow: 0 0 40px var(--nasser-pink);
 }
 
-/* حركة الظهور التدريجي */
-.reveal { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s forwards; }
-
-@keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-}
+.reveal { opacity: 0; transform: translateY(40px); animation: fadeInUp 1s forwards; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
 footer {
-    margin-top: 80px; padding: 50px;
-    background: rgba(0,0,0,0.85);
-    border-top: 2px solid var(--nasser-blue);
-    font-weight: 700;
+    margin-top: 100px; padding: 60px;
+    background: rgba(0,0,0,0.9);
+    border-top: 1px solid var(--nasser-blue);
 }
