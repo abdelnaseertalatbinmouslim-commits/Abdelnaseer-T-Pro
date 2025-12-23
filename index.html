@@ -9,6 +9,7 @@
         :root {
             --accent-blue: #00d2ff;
             --accent-pink: #ff0055;
+            --gold: #ffcc00;
             --text-white: #ffffff;
         }
 
@@ -16,98 +17,97 @@
             margin: 0; padding: 0;
             font-family: 'Cairo', sans-serif;
             color: var(--text-white);
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('Abdo.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(10, 25, 47, 0.92)), url('Abdo.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
             text-align: center;
         }
 
-        /* شريط علوي يظهر هويتك كمنشئ للموقع */
-        .creator-bar {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-bottom: 1px solid var(--accent-blue);
-            font-size: 0.9rem;
-            color: var(--accent-blue);
-            font-weight: bold;
-            letter-spacing: 1px;
+        /* بصمة المنشئ */
+        .creator-header {
+            background: rgba(0, 0, 0, 0.8); padding: 15px;
+            border-bottom: 2px solid var(--accent-blue);
+            font-weight: 900; font-size: 1.2rem; color: var(--accent-blue);
+            text-shadow: 0 0 10px var(--accent-blue);
         }
 
         .hero-banner {
             width: 100%; height: 350px;
             background: url('Abdo.jpg') no-repeat center center;
-            background-size: cover;
-            position: relative;
+            background-size: cover; position: relative;
             border-bottom: 4px solid var(--accent-blue);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .logo-container { position: absolute; bottom: -70px; right: 60px; }
+        .logo-container { position: absolute; bottom: -70px; right: 50%; transform: translateX(50%); }
         .logo-img {
             width: 160px; height: 160px; border-radius: 50%;
-            border: 6px solid #0a192f; background: white; object-fit: cover;
+            border: 6px solid var(--accent-blue); background: white; object-fit: cover;
+            box-shadow: 0 0 25px var(--accent-blue);
         }
 
-        .container { max-width: 1100px; margin: 100px auto; padding: 20px; }
-        
-        /* تنسيق النبذة الرسمية */
-        .college-details {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 50px;
-            text-align: right;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .college-details h2 { color: var(--accent-blue); text-align: center; margin-top: 0; }
-        .college-details p { line-height: 1.8; color: #eee; }
+        .container { max-width: 1100px; margin: 100px auto 40px; padding: 20px; }
 
-        .admin-section {
+        /* كارت النبذة الكبيرة */
+        .main-info-card {
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
+            border-radius: 30px; padding: 50px 40px; margin-bottom: 60px;
+            border: 1px solid rgba(255,255,255,0.1); text-align: right;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .main-info-card h1 { 
+            color: var(--accent-blue); font-size: 2.5rem; font-weight: 900; 
+            text-align: center; margin-bottom: 30px; text-shadow: 0 0 15px var(--accent-blue);
+        }
+
+        .main-description { font-size: 1.25rem; line-height: 2; color: #f0f0f0; font-weight: 700; margin-bottom: 40px; }
+
+        /* عناوين فرعية مضيئة وعريضة */
+        .sub-heading {
+            color: var(--gold); font-size: 1.8rem; font-weight: 900;
+            border-right: 6px solid var(--gold); padding-right: 15px; margin: 40px 0 20px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+
+        .text-content { font-size: 1.15rem; font-weight: 700; color: #e0e0e0; margin-bottom: 15px; }
+        .text-content b { color: var(--accent-blue); font-size: 1.3rem; }
+
+        /* قسم الإدارة بصورة احترافية */
+        .admin-box {
             display: flex; justify-content: space-around; flex-wrap: wrap;
-            margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px; padding: 30px; background: rgba(0,0,0,0.4);
+            border-radius: 20px; border: 1px solid var(--accent-blue);
         }
+        .admin-box div { margin: 15px; text-align: center; }
+        .admin-box span { display: block; color: var(--accent-blue); font-size: 1rem; font-weight: 900; }
+        .admin-box strong { font-size: 1.6rem; font-weight: 900; color: #fff; text-shadow: 0 0 5px #fff; }
 
-        h1 { font-size: 2.8rem; margin-bottom: 50px; color: var(--accent-blue); text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
-
-        .year-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        /* منصة المحتوى التعليمي */
+        .section-title { font-size: 3rem; font-weight: 900; margin: 80px 0 40px; color: #fff; text-shadow: 0 0 20px var(--accent-pink); }
+        .year-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
 
         .year-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 50px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: white;
-            font-size: 1.8rem;
-            font-weight: bold;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: 0.4s ease;
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px);
+            padding: 60px 20px; border-radius: 30px; text-decoration: none;
+            color: white; font-size: 2rem; font-weight: 900;
+            border: 1px solid rgba(255,255,255,0.2); transition: 0.4s ease;
         }
-
         .year-card:hover {
-            transform: translateY(-15px);
-            background: var(--accent-pink);
-            box-shadow: 0 15px 30px rgba(255, 0, 85, 0.4);
+            transform: translateY(-20px); background: var(--accent-pink);
+            box-shadow: 0 20px 40px rgba(255, 0, 85, 0.5);
         }
 
         .waiting-card {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px dashed rgba(255, 255, 255, 0.3);
-            padding: 50px 20px;
-            border-radius: 25px;
-            color: rgba(255,255,255,0.5);
+            background: rgba(0, 0, 0, 0.5); border: 2px dashed rgba(255, 255, 255, 0.2);
+            padding: 60px 20px; border-radius: 30px; color: rgba(255,255,255,0.3);
         }
 
-        .footer { padding: 60px; margin-top: 50px; background: rgba(0,0,0,0.85); border-top: 2px solid var(--accent-blue); }
+        .footer { padding: 60px; margin-top: 100px; background: rgba(0,0,0,0.9); border-top: 3px solid var(--accent-blue); }
     </style>
 </head>
 <body>
-    
-    <div class="creator-bar">
-        CREATED & DEVELOPED BY: CAP. ABDELNASEER TALAT 🚀
+
+    <div class="creator-header">
+        BY CAP. ABDELNASEER TALAT | CHIEF DEVELOPER 🚀
     </div>
 
     <div class="hero-banner">
@@ -117,42 +117,57 @@
     </div>
 
     <div class="container">
-        <div class="college-details">
-            <h2>كلية التربية الرياضية (علوم الرياضة) - جامعة أسيوط</h2>
-            <p>تأسست عام 1980، وتهدف لإعداد متخصصين في علوم الرياضة والتربية البدنية وتزويدهم بالمعرفة العلمية في مجالات التعليم والإدارة والتدريب والصحة، مع التركيز على البحث العلمي والتطبيق لخدمة المجتمع. الكلية تقدم برامج متميزة ومعتمدة دوليًا.</p>
-            
-            <div class="admin-section">
+        
+        <div class="main-info-card">
+            <h1>كلية التربية الرياضية (علوم الرياضة) - جامعة أسيوط</h1>
+            <p class="main-description">
+                هي أول كلية من نوعها في صعيد مصر، تأسست عام 1980، وتهدف لإعداد متخصصين في علوم الرياضة والتربية البدنية (معلمين ومدربين وأخصائيين) وتزويدهم بالمعرفة العلمية في مجالات التعليم والإدارة والتدريب والصحة، مع التركيز على البحث العلمي والتطبيق لخدمة المجتمع. الكلية تقدم برامج متميزة ومعتمدة دوليًا، وتضم أقسامًا متنوعة مثل التدريب الرياضي، علوم الصحة، علم النفس الرياضي، والمناهج وطرق التدريس.
+            </p>
+
+            <div class="sub-heading">أهداف الكلية الرئيسية</div>
+            <div class="text-content"><b>إعداد المعلمين:</b> تأهيل معلمي التربية الرياضية للمراحل التعليمية المختلفة، وأخصائيين رياضة ومدربين.</div>
+            <div class="text-content"><b>تأهيل الخبراء:</b> إعداد أعضاء هيئة تدريس وباحثين متخصصين في المجال الرياضي.</div>
+            <div class="text-content"><b>البحث العلمي:</b> إجراء دراسات تخدم البيئة والمجتمع وتطور التربية الرياضية.</div>
+            <div class="text-content"><b>خدمة المجتمع:</b> تقديم استشارات علمية للهيئات الرياضية وتطوير العاملين في المجال.</div>
+
+            <div class="sub-heading">ما تقدمه الكلية</div>
+            <div class="text-content"><b>برامج دراسية:</b> متخصصة في علوم الرياضة والتربية البدنية بمعايير عالمية.</div>
+            <div class="text-content"><b>أقسام متنوعة:</b> مثل التدريب الرياضي، المنازلات، ألعاب القوى، علوم الصحة، علم النفس الرياضي، الإدارة الرياضية، والرياضات المائية.</div>
+            <div class="text-content"><b>تخصصات دقيقة:</b> تشمل تأهيل الإصابات الرياضية، تخطيط الأحمال البدنية، واللياقة البدنية للأندية الصحية.</div>
+
+            <div class="admin-box">
                 <div>
-                    <span style="color: var(--accent-blue); display: block;">عميد الكلية</span>
+                    <span>عميد الكلية</span>
                     <strong>أ.د. عماد سمير</strong>
                 </div>
                 <div>
-                    <span style="color: var(--accent-blue); display: block;">وكيل الكلية لشئون التعليم والطلاب</span>
+                    <span>وكيل الكلية لشئون التعليم والطلاب</span>
                     <strong>أ.د. ياسر حسن</strong>
                 </div>
             </div>
         </div>
 
-        <h1>مرحباً بكم في منصة المحتوى التعليمي</h1>
+        <h3 class="section-title">منصة المحتوى التعليمي</h3>
         
         <div class="year-grid">
             <a href="level1.html" class="year-card">الفرقة الأولى</a>
             <a href="level2.html" class="year-card">الفرقة الثانية</a>
             <div class="waiting-card">
-                <span style="font-size: 1.6rem; font-weight: bold;">الفرقة الثالثة</span>
-                <div style="font-size: 0.9rem; color: var(--accent-blue);">قريباً.. في انتظار إضافة ملفات</div>
+                <span style="font-size: 1.8rem; font-weight: 900;">الفرقة الثالثة</span>
+                <div style="font-size: 1rem; color: var(--accent-blue); margin-top: 10px;">قريباً.. إضافة الملفات</div>
             </div>
             <div class="waiting-card">
-                <span style="font-size: 1.6rem; font-weight: bold;">الفرقة الرابعة</span>
-                <div style="font-size: 0.9rem; color: var(--accent-blue);">قريباً.. في انتظار إضافة ملفات</div>
+                <span style="font-size: 1.8rem; font-weight: 900;">الفرقة الرابعة</span>
+                <div style="font-size: 1rem; color: var(--accent-blue); margin-top: 10px;">قريباً.. إضافة الملفات</div>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        بواسطة المبرمج : <b style="color: var(--accent-blue);">Abdelnaseer T pro</b> &copy; 2025
-        <br>
-        <small style="color: #666;">Professional Sports Educational Platform</small>
+        بواسطة المبرمج العالمي: <b style="color: var(--accent-blue);">Abdelnaseer T pro</b> &copy; 2025
+        <br><br>
+        <small style="opacity: 0.6; letter-spacing: 2px;">SPORT SCIENCE ACADEMIC PLATFORM</small>
     </footer>
+
 </body>
-            </html>
+</html>
