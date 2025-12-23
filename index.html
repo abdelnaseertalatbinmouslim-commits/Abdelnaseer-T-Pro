@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الرئيسية | كلية علوم الرياضة - جامعة أسيوط</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --accent-blue: #00d2ff;
@@ -13,14 +14,24 @@
 
         body {
             margin: 0; padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', sans-serif;
             color: var(--text-white);
-            /* تعيين صورة الغلاف كخلفية ثابتة للموقع */
             background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('Abdo.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             text-align: center;
+        }
+
+        /* شريط علوي يظهر هويتك كمنشئ للموقع */
+        .creator-bar {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-bottom: 1px solid var(--accent-blue);
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
         .hero-banner {
@@ -39,6 +50,25 @@
         }
 
         .container { max-width: 1100px; margin: 100px auto; padding: 20px; }
+        
+        /* تنسيق النبذة الرسمية */
+        .college-details {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            text-align: right;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .college-details h2 { color: var(--accent-blue); text-align: center; margin-top: 0; }
+        .college-details p { line-height: 1.8; color: #eee; }
+
+        .admin-section {
+            display: flex; justify-content: space-around; flex-wrap: wrap;
+            margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
         h1 { font-size: 2.8rem; margin-bottom: 50px; color: var(--accent-blue); text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
 
         .year-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
@@ -71,17 +101,40 @@
             color: rgba(255,255,255,0.5);
         }
 
-        .footer { padding: 60px; margin-top: 50px; background: rgba(0,0,0,0.7); }
+        .footer { padding: 60px; margin-top: 50px; background: rgba(0,0,0,0.85); border-top: 2px solid var(--accent-blue); }
     </style>
 </head>
 <body>
+    
+    <div class="creator-bar">
+        CREATED & DEVELOPED BY: CAP. ABDELNASEER TALAT 🚀
+    </div>
+
     <div class="hero-banner">
         <div class="logo-container">
             <img src="Habiba.jpg" alt="Logo" class="logo-img">
         </div>
     </div>
+
     <div class="container">
+        <div class="college-details">
+            <h2>كلية التربية الرياضية (علوم الرياضة) - جامعة أسيوط</h2>
+            <p>تأسست عام 1980، وتهدف لإعداد متخصصين في علوم الرياضة والتربية البدنية وتزويدهم بالمعرفة العلمية في مجالات التعليم والإدارة والتدريب والصحة، مع التركيز على البحث العلمي والتطبيق لخدمة المجتمع. الكلية تقدم برامج متميزة ومعتمدة دوليًا.</p>
+            
+            <div class="admin-section">
+                <div>
+                    <span style="color: var(--accent-blue); display: block;">عميد الكلية</span>
+                    <strong>أ.د. عماد سمير</strong>
+                </div>
+                <div>
+                    <span style="color: var(--accent-blue); display: block;">وكيل الكلية لشئون التعليم والطلاب</span>
+                    <strong>أ.د. ياسر حسن</strong>
+                </div>
+            </div>
+        </div>
+
         <h1>مرحباً بكم في منصة المحتوى التعليمي</h1>
+        
         <div class="year-grid">
             <a href="level1.html" class="year-card">الفرقة الأولى</a>
             <a href="level2.html" class="year-card">الفرقة الثانية</a>
@@ -95,8 +148,11 @@
             </div>
         </div>
     </div>
+
     <footer class="footer">
-        بواسطة المبرمج العالمي: <b style="color: var(--accent-blue);">Abdelnaseer T pro</b> &copy; 2025
+        بواسطة المبرمج : <b style="color: var(--accent-blue);">Abdelnaseer T pro</b> &copy; 2025
+        <br>
+        <small style="color: #666;">Professional Sports Educational Platform</small>
     </footer>
 </body>
-</html>
+            </html>
