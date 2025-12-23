@@ -3,83 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الفرقة الأولى | عالم الرياضة المذهل</title>
+    <title>الفرقة الأولى | منصة الأبطال</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --neon-blue: #00d2ff;
             --neon-pink: #ff0055;
             --neon-green: #00ff88;
-            --glass: rgba(255, 255, 255, 0.1);
         }
 
         body {
             margin: 0; padding: 0;
             font-family: 'Cairo', sans-serif;
             color: white;
-            /* سنستخدم هذا لضمان وضوح النص فوق الفيديو */
-            background-color: #000; 
+            /* استخدام صورتك كخلفية ثابتة مع تعتيم احترافي */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('Abdo.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
             overflow-x: hidden;
-            position: relative; /* مهم لطبقات الفيديو */
         }
 
-        /* حاوية الفيديو للخلفية */
-        #video-background {
-            position: fixed;
-            right: 0; bottom: 0;
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto;
-            z-index: -2; /* ليكون خلف كل المحتوى */
-            background-size: cover;
-            filter: brightness(0.4) grayscale(0.2); /* تعتيم وتخفيف الألوان للفيديو */
-        }
-
-        /* طبقة سوداء شفافة فوق الفيديو لضمان وضوح المحتوى */
-        .overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* طبقة تعتيم قوية */
-            z-index: -1; /* فوق الفيديو مباشرة */
-        }
-
-        /* كرات قدم متحركة في الخلفية (فوق الفيديو والطبقة الشفافة) */
+        /* كرات قدم متحركة في الخلفية */
         .soccer-ball {
-            position: fixed; font-size: 25px; z-index: 0; /* z-index أعلى من الفيديو والخلفية */
-            animation: fly 15s linear infinite; opacity: 0.2; /* أقل شفافية لتكون واضحة */
-            pointer-events: none; /* لتجنب التفاعل مع الماوس */
+            position: fixed; font-size: 25px; z-index: -1;
+            animation: fly 15s linear infinite; opacity: 0.3;
         }
         @keyframes fly {
             from { transform: translateY(100vh) rotate(0deg); left: calc(var(--pos) * 1%); }
             to { transform: translateY(-10vh) rotate(360deg); left: calc(var(--pos) * 1%); }
         }
 
-        .container { max-width: 1300px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 40px 20px; }
 
         .back-home {
             display: inline-block; margin-bottom: 30px; color: var(--neon-blue);
             text-decoration: none; font-weight: 900; border: 2px solid var(--neon-blue);
             padding: 10px 25px; border-radius: 10px; transition: 0.3s;
-            text-transform: uppercase; letter-spacing: 1px;
-            background: rgba(0,0,0,0.5); /* خلفية لزر العودة ليكون واضحاً */
-            box-shadow: 0 0 10px var(--neon-blue);
+            background: rgba(0,0,0,0.4);
         }
         .back-home:hover { background: var(--neon-blue); color: black; box-shadow: 0 0 20px var(--neon-blue); }
 
         h1.main-title {
-            font-size: 4rem; font-weight: 900; text-transform: uppercase;
+            font-size: 4rem; font-weight: 900;
             background: linear-gradient(to bottom, #fff, var(--neon-blue));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 50px; text-shadow: 0 0 30px rgba(0, 210, 255, 0.8); /* توهج أقوى */
+            margin-bottom: 50px; text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .term-header {
             font-size: 2.5rem; font-weight: 900; padding: 15px; margin: 60px 0 30px;
-            background: rgba(255, 255, 255, 0.08); /* شفافية أعلى للـ glassmorphism */
-            border-left: 10px solid;
+            background: rgba(255, 255, 255, 0.05); border-left: 10px solid;
             clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-            backdrop-filter: blur(15px); /* تأثير الزجاج */
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); /* توهج */
+            backdrop-filter: blur(5px);
         }
         .term-header.first { color: var(--neon-blue); border-color: var(--neon-blue); }
         .term-header.second { color: var(--neon-pink); border-color: var(--neon-pink); }
@@ -88,66 +64,54 @@
 
         /* قوالب الكروت الرياضية */
         .subject-card {
-            background: rgba(0, 0, 0, 0.7); /* خلفية داكنة أكثر للكروت */
-            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255,255,255,0.1);
             padding: 30px; border-radius: 15px; transition: 0.4s;
             position: relative; overflow: hidden;
-            backdrop-filter: blur(10px); /* تأثير الزجاج للكروت */
+            backdrop-filter: blur(10px);
         }
         .subject-card::after {
             content: 'SPORTS'; position: absolute; bottom: -10px; right: -10px;
-            font-size: 4rem; opacity: 0.05; font-weight: 900; font-style: italic;
+            font-size: 4rem; opacity: 0.03; font-weight: 900; font-style: italic;
         }
         .subject-card:hover {
             border-color: var(--neon-blue); transform: scale(1.03) translateY(-10px);
-            box-shadow: 0 0 50px rgba(0, 210, 255, 0.5); /* توهج أقوى عند التمرير */
-            background: rgba(0, 0, 0, 0.9); /* الكارت يغمق أكثر */
+            box-shadow: 0 15px 40px rgba(0, 210, 255, 0.3);
+            background: rgba(0, 0, 0, 0.8);
         }
 
-        .subject-card h3 { font-size: 1.5rem; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 10px; }
+        .subject-card h3 { font-size: 1.5rem; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
 
-        /* الأزرار المظهرة بالكامل */
+        /* الأزرار المائلة والمظهرة بالكامل */
         .btn-group { display: flex; gap: 10px; position: relative; z-index: 10; }
         .btn {
             flex: 1; padding: 15px; border-radius: 5px; text-decoration: none;
             font-weight: 900; font-size: 1rem; transition: 0.3s;
             display: flex; align-items: center; justify-content: center; gap: 8px;
             clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-            box-shadow: 0 0 10px rgba(0,0,0,0.3); /* ظل خفيف للأزرار */
         }
         
         .btn-sheet { background: var(--neon-blue); color: black; }
         .btn-exam { background: var(--neon-green); color: black; }
 
-        .btn:hover { transform: skewX(-5deg); filter: brightness(1.2); box-shadow: 0 0 20px currentColor; }
+        .btn:hover { transform: skewX(-5deg); filter: brightness(1.2); box-shadow: 0 0 15px currentColor; }
 
-        footer { 
-            margin-top: 80px; padding: 40px; background: rgba(0, 0, 0, 0.8); 
-            border-top: 3px solid var(--neon-blue); font-weight: bold; 
-            backdrop-filter: blur(10px); /* تأثير الزجاج للفوتَر */
-        }
+        footer { margin-top: 80px; padding: 40px; background: black; border-top: 3px solid var(--neon-blue); font-weight: bold; }
 
         @media (max-width: 768px) {
             h1.main-title { font-size: 2.5rem; }
             .term-header { font-size: 1.8rem; }
-            .btn-group { flex-direction: column; } /* الأزرار تحت بعضها في الموبايل */
+            .btn-group { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <video autoplay muted loop id="video-background">
-        <source src="sports_bg.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="soccer-ball" style="--pos: 15; animation-delay: 0s;">⚽</div>
+    <div class="soccer-ball" style="--pos: 45; animation-delay: 5s;">⚽</div>
+    <div class="soccer-ball" style="--pos: 75; animation-delay: 2s;">⚽</div>
 
-    <div class="overlay"></div>
-
-    <div class="soccer-ball" style="--pos: 10; animation-delay: 0s;">⚽</div>
-    <div class="soccer-ball" style="--pos: 30; animation-delay: 5s;">⚽</div>
-    <div class="soccer-ball" style="--pos: 60; animation-delay: 2s;">⚽</div>
-    <div class="soccer-ball" style="--pos: 85; animation-delay: 8s;">⚽</div>
-    <div class="soccer-ball" style="--pos: 20; animation-delay: 3s;">🏀</div> <div class="soccer-ball" style="--pos: 70; animation-delay: 7s;">🏈</div> <div class="container">
+<div class="container">
     <a href="index.html" class="back-home">🏠 الرئيسية</a>
     <h1 class="main-title">الفرقة الأولى</h1>
 
@@ -156,25 +120,25 @@
         <div class="subject-card"><h3>أساسيات التمرينات</h3><div class="btn-group"><a href="tamrenat-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="tamrenat-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>أساسيات المبارزة</h3><div class="btn-group"><a href="mobaraza-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="mobaraza-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>أساسيات المضمار</h3><div class="btn-group"><a href="madmar-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="madmar-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
-        <div class="subject-card"><h3>الإيقاع الحركي</h3><div class="btn-group"><a href="eqaa-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="eqaa-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
-        <div class="subject-card"><h3>مذكرة كرة القدم</h3><div class="btn-group"><a href="football-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="football-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
-        <div class="subject-card"><h3>فلسفة وتاريخ الرياضة</h3><div class="btn-group"><a href="falsafa-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="falsafa-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
-        <div class="subject-card"><h3>الإدارة الرياضية</h3><div class="btn-group"><a href="edara-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="edara-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات الإيقاع الحركي</h3><div class="btn-group"><a href="eqaa-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="eqaa-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات كرة القدم</h3><div class="btn-group"><a href="football-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="football-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>فلسفة وتاريخ التربية الرياضية</h3><div class="btn-group"><a href="falsafa-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="falsafa-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>مقدمة في الإدارة الرياضية</h3><div class="btn-group"><a href="edara-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="edara-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>التشريح الوصفي</h3><div class="btn-group"><a href="tashreh-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="tashreh-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>اللغة الإنجليزية</h3><div class="btn-group"><a href="english-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="english-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
     </div>
 
     <div class="term-header second">الفصل الدراسي الثاني</div>
     <div class="subject-grid">
-        <div class="subject-card"><h3>ألعاب مضرب</h3><div class="btn-group"><a href="madreb-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="madreb-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
-        <div class="subject-card"><h3>الجمباز الإيقاعي</h3><div class="btn-group"><a href="gym-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="gym-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات ألعاب مضرب</h3><div class="btn-group"><a href="madreb-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="madreb-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات الجمباز الإيقاعي</h3><div class="btn-group"><a href="gym-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="gym-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>أساسيات السباحة</h3><div class="btn-group"><a href="swimming-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="swimming-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>أساسيات المصارعة</h3><div class="btn-group"><a href="wrestling-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="wrestling-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>الإحصاء التطبيقي</h3><div class="btn-group"><a href="stats-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="stats-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>علم النفس الرياضي</h3><div class="btn-group"><a href="psychology-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="psychology-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
-        <div class="subject-card"><h3>الكرة الطائرة</h3><div class="btn-group"><a href="volleyball-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="volleyball-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>أساسيات الكرة الطائرة</h3><div class="btn-group"><a href="volleyball-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="volleyball-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>مبادئ التدريس</h3><div class="btn-group"><a href="teaching-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="teaching-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
-        <div class="subject-card"><h3>علم الحركة</h3><div class="btn-group"><a href="kinesiology-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="kinesiology-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
+        <div class="subject-card"><h3>مبادئ علم الحركة</h3><div class="btn-group"><a href="kinesiology-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="kinesiology-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>فسيولوجيا الإنسان</h3><div class="btn-group"><a href="physiology-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="physiology-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
         <div class="subject-card"><h3>قضايا مجتمعية</h3><div class="btn-group"><a href="issues-sheet.pdf" class="btn btn-sheet">📄 شيت</a><a href="issues-exam.pdf" class="btn btn-exam">🏆 امتحان</a></div></div>
     </div>
