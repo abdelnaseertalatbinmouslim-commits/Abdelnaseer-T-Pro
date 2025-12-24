@@ -3,50 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cap. Abdelnaseer | المنصة التعليمية</title>
+    <title>منصة الكابتن عبد الناصر طلعت | الرئيسية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="clean-bg"></div>
+    <div class="stadium-bg"></div>
+    <div class="falling-icons" id="iconsContainer"></div>
 
-    <div class="container" style="max-width: 1100px; margin: auto; padding: 20px;">
+    <div class="header-section reveal">
+        <div class="profile-frame">
+            <img src="IMG-20251223-WA0001.jpg" alt="Cap. Abdelnaseer">
+        </div>
         
-        <div class="reveal" style="margin-bottom: 80px;">
-            <div class="nasser-brand-capsule">
-                CAP. ABDELNASEER TALAT
-            </div>
+        <div class="nasser-brand-title">
+             <span>⚽</span>
+             CAP. ABDELNASEER TALAT
+             <span>🏟️</span>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <a href="level1.html" class="level-card reveal">
+            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الأولى</h3>
+            <div class="status-label" style="color: #00ff88;">جاهز للدخول</div>
+        </a>
+
+        <a href="level2.html" class="level-card reveal">
+            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الثانية</h3>
+            <div class="status-label" style="color: #00ff88;">جاهز للدخول</div>
+        </a>
+
+        <div class="level-card locked reveal">
+            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الثالثة</h3>
+            <div class="status-label">لم يتم إضافة الملفات</div>
         </div>
 
-        <h2 class="reveal" style="font-weight: 900; font-size: 2.5rem; margin-bottom: 40px; color: var(--nasser-blue);">
-            المحتوى التعليمي
-        </h2>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-            <a href="level1.html" class="nasser-card-3d reveal">
-                <div class="nasser-card-inner">
-                    <h3 style="font-size: 2.2rem; font-weight: 900;">الفرقة الأولى</h3>
-                    <p style="opacity: 0.7;">اضغط للدخول للمواد</p>
-                </div>
-            </a>
-
-            <a href="level2.html" class="nasser-card-3d reveal">
-                <div class="nasser-card-inner">
-                    <h3 style="font-size: 2.2rem; font-weight: 900;">الفرقة الثانية</h3>
-                    <p style="opacity: 0.7;">اضغط للدخول للمواد</p>
-                </div>
-            </a>
+        <div class="level-card locked reveal">
+            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الرابعة</h3>
+            <div class="status-label">لم يتم إضافة الملفات</div>
         </div>
-
     </div>
 
     <footer>
-        <div style="font-weight: 900; font-size: 1.2rem; opacity: 0.8;">
-            DESIGNED BY <span style="color: var(--nasser-blue);">ABDELNASEER T PRO</span> &copy; 2025
+        <div style="font-size: 1.4rem; font-weight: 900; letter-spacing: 1px;">
+            PLATFORM BY <span style="color: var(--nasser-blue);">ABDELNASEER T PRO</span> &copy; 2025
         </div>
+        <p style="opacity: 0.6; margin-top: 10px;">جميع الحقوق محفوظة للكابتن عبد الناصر طلعت</p>
     </footer>
 
     <script>
+        // إنشاء الكرات المتساقطة عشوائياً
+        const container = document.getElementById('iconsContainer');
+        for (let i = 0; i < 20; i++) {
+            let ball = document.createElement('div');
+            ball.className = 'ball';
+            ball.style.left = Math.random() * 100 + "vw";
+            ball.style.animationDuration = (Math.random() * 5 + 4) + "s"; // سرعات مختلفة
+            ball.style.animationDelay = Math.random() * 5 + "s";
+            container.appendChild(ball);
+        }
+
+        // تحريك العناصر بتسلسل زمني عند فتح الموقع
         document.querySelectorAll('.reveal').forEach((el, i) => {
             el.style.animationDelay = `${i * 0.2}s`;
         });
