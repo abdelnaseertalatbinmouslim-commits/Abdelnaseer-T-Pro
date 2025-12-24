@@ -1,119 +1,76 @@
-/* SPORTS ARENA ULTIMATE UI | BY CAP. ABDELNASEER TALAT 2025 */
+/* ELITE SPORTS UI - CAP. NASSER EDITION */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
 
 :root {
-    --nasser-blue: #00d2ff;
-    --nasser-pink: #ff0055;
-    --nasser-gold: #ffcc00;
-}
-
-* { 
-    box-sizing: border-box; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    --neon-blue: #00d2ff;
+    --neon-pink: #ff0055;
+    --glass: rgba(255, 255, 255, 0.05);
 }
 
 body {
-    margin: 0; padding: 0; 
-    font-family: 'Cairo', sans-serif;
-    color: white; 
-    background: #000; 
-    overflow-x: hidden; 
-    text-align: center;
+    margin: 0; padding: 0; font-family: 'Cairo', sans-serif;
+    background: #050a15; color: white; overflow-x: hidden;
 }
 
-/* خلفية الاستاد السينمائية */
-.stadium-bg {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -3;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+/* خلفية الاستاد مظلمة وفخمة */
+.main-stadium {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
                 url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070');
     background-size: cover; background-position: center;
 }
 
-/* تأثير الكرات المتساقطة */
-.falling-icons { 
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-    pointer-events: none; z-index: -1; 
+/* الهيدر الاحترافي (نفس شكل الصورة) */
+.nasser-header {
+    display: flex; align-items: center; justify-content: center;
+    gap: 20px; padding: 40px 20px; margin-top: 20px;
 }
 
-.ball {
-    position: absolute; width: 25px; height: 25px;
-    background: url('https://cdn-icons-png.flaticon.com/512/53/53254.png'); /* أيقونة كورة */
-    background-size: contain; opacity: 0.15; 
-    animation: fall linear infinite;
+.profile-mini {
+    width: 90px; height: 90px; border-radius: 50%;
+    border: 3px solid var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue);
+    overflow: hidden;
+}
+.profile-mini img { width: 100%; height: 100%; object-fit: cover; }
+
+.brand-glow {
+    background: var(--glass); backdrop-filter: blur(10px);
+    border: 1px solid var(--neon-blue); padding: 10px 30px;
+    border-radius: 15px; font-size: 1.8rem; font-weight: 900;
+    text-shadow: 0 0 10px var(--neon-blue); box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
 }
 
-@keyframes fall {
-    0% { transform: translateY(-10vh) rotate(0deg); }
-    100% { transform: translateY(110vh) rotate(360deg); }
+/* تصميم الكروت المودرن (أفقية وشيك) */
+.container { max-width: 900px; margin: auto; padding: 20px; }
+
+.level-row {
+    display: flex; flex-direction: column; gap: 15px; margin-top: 40px;
 }
 
-/* قسم الهيدر (الصورة والاسم) */
-.header-section { margin-top: 60px; display: inline-block; }
-
-.profile-frame {
-    width: 170px; height: 170px; border-radius: 50%;
-    border: 4px solid var(--nasser-blue);
-    box-shadow: 0 0 35px var(--nasser-blue);
-    overflow: hidden; margin: 0 auto 25px;
-    background: #111;
+.card-elite {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--glass); border: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 40px; border-radius: 50px;
+    text-decoration: none; color: white; transition: 0.3s;
+    position: relative; overflow: hidden;
 }
 
-.profile-frame img { 
-    width: 100%; height: 100%; object-fit: cover; 
+.card-elite::before {
+    content: ''; position: absolute; left: 0; top: 0; width: 5px; height: 100%;
+    background: var(--neon-blue);
 }
 
-.nasser-brand-title {
-    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px);
-    padding: 15px 50px; border-radius: 60px;
-    border: 2px solid var(--nasser-blue);
-    font-size: clamp(1.3rem, 5vw, 2.3rem); font-weight: 900;
-    color: #fff; text-shadow: 0 0 15px var(--nasser-blue);
-    display: flex; align-items: center; gap: 15px;
+.card-elite:hover {
+    background: rgba(255,255,255,0.1); transform: scale(1.02);
+    border-color: var(--neon-blue); box-shadow: 0 0 25px rgba(0, 210, 255, 0.3);
 }
 
-/* شبكة كروت الفرق */
-.grid-container {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; padding: 60px 20px; 
-    max-width: 1200px; margin: auto;
-}
+.card-elite.locked { opacity: 0.4; cursor: not-allowed; border-color: gray; }
+.card-elite.locked::before { background: gray; }
 
-.level-card {
-    background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 35px;
-    padding: 60px 20px; text-decoration: none; color: white;
-    display: block;
-}
+.card-elite h3 { margin: 0; font-size: 1.5rem; font-weight: 700; }
+.status-dot { width: 12px; height: 12px; border-radius: 50%; background: #00ff88; box-shadow: 0 0 10px #00ff88; }
+.status-dot.red { background: #ff4444; box-shadow: 0 0 10px #ff4444; }
 
-.level-card:hover {
-    background: var(--nasser-pink); 
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 0 50px var(--nasser-pink);
-}
-
-/* ستايل الكروت المغلقة */
-.level-card.locked { 
-    opacity: 0.5; cursor: not-allowed; 
-    border: 2px dashed rgba(255, 255, 255, 0.2); 
-}
-
-.level-card.locked:hover { 
-    transform: none; background: rgba(255, 255, 255, 0.07); box-shadow: none; 
-}
-
-.status-label {
-    display: inline-block; margin-top: 15px; padding: 8px 18px;
-    background: rgba(0, 0, 0, 0.4); border-radius: 12px;
-    font-size: 0.9rem; font-weight: 700; color: var(--nasser-gold);
-}
-
-/* أنيميشن الظهور التدريجي */
-.reveal { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s forwards; }
-@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-footer { 
-    margin-top: 100px; padding: 60px; 
-    border-top: 2px solid var(--nasser-blue); 
-    background: rgba(0,0,0,0.9); 
-}
+footer { margin-top: 60px; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7; }
