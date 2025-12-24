@@ -3,62 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cap. Nasser | Dashboard</title>
+    <title>Cap. Nasser | المنصة الرسمية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="main-stadium"></div>
+    <div class="page-wallpaper"></div>
 
-    <header class="nasser-header">
-        <div class="profile-mini">
-            <img src="IMG-20251223-WA0001.jpg" alt="Cap. Nasser">
+    <header class="main-header">
+        <div class="user-avatar">
+            <img src="IMG-20251223-WA0001.jpg" alt="Abdelnaseer Talat">
         </div>
-        <div class="brand-glow">
-            CAP. ABDELNASEER TALAT
-        </div>
+        <h1 class="nasser-headline">CAP. ABDELNASEER TALAT</h1>
+        <div class="supervision-tag">الموقع الرسمي تحت إشراف الكابتن عبد الناصر طلعت</div>
     </header>
 
-    <div class="container">
-        <h2 style="text-align: right; margin-bottom: 30px; font-weight: 900; color: #00d2ff;">بوابات التعليم الرياضي</h2>
+    <main class="content-grid">
+        <a href="level1.html" class="feature-box">
+            <h3>الفرقة الأولى</h3>
+            <span class="badge-status">دخول متاح</span>
+        </a>
 
-        <div class="level-row">
-            <a href="level1.html" class="card-elite">
-                <h3>الفرقة الأولى</h3>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <span>متاح</span>
-                    <div class="status-dot"></div>
-                </div>
-            </a>
+        <a href="level2.html" class="feature-box">
+            <h3>الفرقة الثانية</h3>
+            <span class="badge-status">دخول متاح</span>
+        </a>
 
-            <a href="level2.html" class="card-elite" style="border-color: var(--neon-pink);">
-                <h3>الفرقة الثانية</h3>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <span>متاح</span>
-                    <div class="status-dot"></div>
-                </div>
-            </a>
-
-            <div class="card-elite locked">
-                <h3>الفرقة الثالثة</h3>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 0.8rem;">قريباً</span>
-                    <div class="status-dot red"></div>
-                </div>
-            </div>
-
-            <div class="card-elite locked">
-                <h3>الفرقة الرابعة</h3>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 0.8rem;">قريباً</span>
-                    <div class="status-dot red"></div>
-                </div>
-            </div>
+        <div class="feature-box disabled">
+            <h3>الفرقة الثالثة</h3>
+            <span style="color: #ff4444; font-size: 0.9rem;">قيد التحديث</span>
         </div>
-    </div>
 
-    <footer>
-        DESIGNED BY ABDELNASEER T PRO &copy; 2025
+        <div class="feature-box disabled">
+            <h3>الفرقة الرابعة</h3>
+            <span style="color: #ff4444; font-size: 0.9rem;">قيد التحديث</span>
+        </div>
+    </main>
+
+    <footer class="footer-wrap">
+        <p style="font-weight: 800; opacity: 0.8;">
+            جميع الحقوق محفوظة &copy; 2025 <br>
+            تطوير وإشراف: <span style="color: var(--primary-glow);">ناصر طلعت</span>
+        </p>
     </footer>
 
 </body>
