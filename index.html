@@ -3,71 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة الكابتن عبد الناصر طلعت | الرئيسية</title>
+    <title>Cap. Nasser | Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="stadium-bg"></div>
-    <div class="falling-icons" id="iconsContainer"></div>
+    <div class="main-stadium"></div>
 
-    <div class="header-section reveal">
-        <div class="profile-frame">
-            <img src="IMG-20251223-WA0001.jpg" alt="Cap. Abdelnaseer">
+    <header class="nasser-header">
+        <div class="profile-mini">
+            <img src="IMG-20251223-WA0001.jpg" alt="Cap. Nasser">
         </div>
-        
-        <div class="nasser-brand-title">
-             <span>⚽</span>
-             CAP. ABDELNASEER TALAT
-             <span>🏟️</span>
+        <div class="brand-glow">
+            CAP. ABDELNASEER TALAT
         </div>
-    </div>
+    </header>
 
-    <div class="grid-container">
-        <a href="level1.html" class="level-card reveal">
-            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الأولى</h3>
-            <div class="status-label" style="color: #00ff88;">جاهز للدخول</div>
-        </a>
+    <div class="container">
+        <h2 style="text-align: right; margin-bottom: 30px; font-weight: 900; color: #00d2ff;">بوابات التعليم الرياضي</h2>
 
-        <a href="level2.html" class="level-card reveal">
-            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الثانية</h3>
-            <div class="status-label" style="color: #00ff88;">جاهز للدخول</div>
-        </a>
+        <div class="level-row">
+            <a href="level1.html" class="card-elite">
+                <h3>الفرقة الأولى</h3>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span>متاح</span>
+                    <div class="status-dot"></div>
+                </div>
+            </a>
 
-        <div class="level-card locked reveal">
-            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الثالثة</h3>
-            <div class="status-label">لم يتم إضافة الملفات</div>
-        </div>
+            <a href="level2.html" class="card-elite" style="border-color: var(--neon-pink);">
+                <h3>الفرقة الثانية</h3>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span>متاح</span>
+                    <div class="status-dot"></div>
+                </div>
+            </a>
 
-        <div class="level-card locked reveal">
-            <h3 style="font-size: 2.2rem; margin: 0;">الفرقة الرابعة</h3>
-            <div class="status-label">لم يتم إضافة الملفات</div>
+            <div class="card-elite locked">
+                <h3>الفرقة الثالثة</h3>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 0.8rem;">قريباً</span>
+                    <div class="status-dot red"></div>
+                </div>
+            </div>
+
+            <div class="card-elite locked">
+                <h3>الفرقة الرابعة</h3>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 0.8rem;">قريباً</span>
+                    <div class="status-dot red"></div>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
-        <div style="font-size: 1.4rem; font-weight: 900; letter-spacing: 1px;">
-            PLATFORM BY <span style="color: var(--nasser-blue);">ABDELNASEER T PRO</span> &copy; 2025
-        </div>
-        <p style="opacity: 0.6; margin-top: 10px;">جميع الحقوق محفوظة للكابتن عبد الناصر طلعت</p>
+        DESIGNED BY ABDELNASEER T PRO &copy; 2025
     </footer>
 
-    <script>
-        // إنشاء الكرات المتساقطة عشوائياً
-        const container = document.getElementById('iconsContainer');
-        for (let i = 0; i < 20; i++) {
-            let ball = document.createElement('div');
-            ball.className = 'ball';
-            ball.style.left = Math.random() * 100 + "vw";
-            ball.style.animationDuration = (Math.random() * 5 + 4) + "s"; // سرعات مختلفة
-            ball.style.animationDelay = Math.random() * 5 + "s";
-            container.appendChild(ball);
-        }
-
-        // تحريك العناصر بتسلسل زمني عند فتح الموقع
-        document.querySelectorAll('.reveal').forEach((el, i) => {
-            el.style.animationDelay = `${i * 0.2}s`;
-        });
-    </script>
 </body>
 </html>
